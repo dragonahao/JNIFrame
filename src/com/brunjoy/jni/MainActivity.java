@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.brunjoy.Setting;
@@ -15,13 +16,13 @@ public class MainActivity extends Activity {
 
 //    private BaseAdapter mAdapter;
     String TAG = "MainActivity";
-
+    private TextView  tvView;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate( savedInstanceState );
         setContentView( R.layout.activity_main );
 //        ListView listView = (ListView) findViewById( R.id.mListview );
-
+        tvView=(TextView) findViewById( R.id.content );
         sets = new Setting( );
         Log.e( TAG, " new Setting( )" );
 
@@ -59,17 +60,18 @@ public class MainActivity extends Activity {
     public boolean onMenuItemSelected(int featureId, MenuItem item) {
         switch (item.getItemId( )) {
         case 0:
-            sets.set( 2, 2 );
-            showToast( " sets.setInt( 2, 2 );" );
+            tvView.setText( "sets.set( 2, 2 )"+sets.set( 2, 2 ) );
             break;
         case 1:
+            tvView.setText( "sets.set( 2, 2 )"+sets.set( 2, 2 ) );
             showToast( "  sets.getParam( 12 )" + sets.setParam( 12 ) );
             break;
         case 2:
-            showToast( "  sets.getParam( 3 )" + sets.getParam( 3 ) );
+            tvView.setText(  "  sets.getParam( 3 )" + sets.getParam( 3 ) );
+         
             break;
         case 3:
-           System.out.println(new JNI().readFile( "/mnt/sdcard/c360_debug.txt" )); 
+            tvView.setText( "read file /mnt/sdcard/c360_debug.txt ="+new JNI().readFile( "/mnt/sdcard/c360_debug.txt" ) );
            
             break;
         case 4:
