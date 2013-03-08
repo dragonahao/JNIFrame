@@ -10,13 +10,13 @@
 # distributed under the License is distributed on an "AS IS" BASIS,
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
-# limitations under the License.
+# limitations under the License.		com_brunjoy_jni_JNINet.cpp 	 com_brunjoy_Setting.cpp 
 #
 LOCAL_PATH := $(call my-dir)
 
 include $(CLEAR_VARS)
 
 LOCAL_MODULE    := jni_framera
-LOCAL_SRC_FILES := FileOperate.cpp com_brunjoy_jni_JNI.cpp com_brunjoy_Setting.cpp
+LOCAL_SRC_FILES :=	mynet.cpp com_brunjoy_jni_JNINet.cpp 
 LOCAL_LDLIBS    := -llog 
 include $(BUILD_SHARED_LIBRARY)

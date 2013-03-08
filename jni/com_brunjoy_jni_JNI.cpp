@@ -3,6 +3,7 @@
 #include "FileOperate.h"
 #include "MyLog.h"
 
+
 /* Header for class com_brunjoy_jni_JNI */
 
 #ifndef _Included_com_brunjoy_jni_JNI
@@ -27,6 +28,7 @@ JNIEXPORT jstring JNICALL Java_com_brunjoy_jni_JNI_readFile(JNIEnv * env,
 	return env->NewStringUTF(content);
 
 }
+
 
 
 /*
