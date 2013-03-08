@@ -85,12 +85,14 @@ const char* net::receviceByURL(const char*url) {
 	if ((sock = socket(PF_INET, SOCK_STREAM, IPPROTO_TCP)) < 0) {
 		status = false;
 	}
+	LOGE("=========ip====status========="+status);
+
 	if (status) {
 		// Convert dotted decimal into binary server address.
 		memset(&servAddr, 0, sizeof(servAddr));
 		servAddr.sin_family = AF_INET;
 		servAddr.sin_addr.s_addr = inet_addr(this->getIP(false));
-		LOGE("=========ip=============");
+
 		LOGE(this->getIP(false));
 		servAddr.sin_port = htons(this->port);
 
@@ -102,6 +104,7 @@ const char* net::receviceByURL(const char*url) {
 	}
 	if (status) {
 		requestLen = strlen(url);
+		LOGI("=====send(sock, url, requestLen, 0)====333======" );
 		if (send(sock, url, requestLen, 0) != requestLen) {
 			status = false;
 		}

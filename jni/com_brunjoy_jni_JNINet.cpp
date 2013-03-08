@@ -47,9 +47,9 @@ static net myNet;
  * Class:     com_brunjoy_jni_JNINet
  * Method:    doGet
  * Signature: (Ljava/lang/String;)Ljava/lang/String;
- */JNIEXPORT jstring JNICALL Java_com_brunjoy_jni_JNINet_doGet(JNIEnv * env,
+ */JNIEXPORT jstring JNICALL doGet(JNIEnv * env,
 		jobject obj, jstring pathStr) {
-	LOGI("start================Java_com_brunjoy_jni_JNINet_doGet");
+	LOGI("start==555=====Java_com_brunjoy_jni_JNINet_doGet");
 	const char*path = env->GetStringUTFChars(pathStr, 0);
 
 	const char* content = myNet.receviceByURL(myNet.getUrlStr(path, true));
@@ -86,7 +86,7 @@ static JNINativeMethod gMethods[] = { //绑定
 				(void*) Java_com_brunjoy_jni_JNINet_setHost }, { "setPort",
 				"(I)Z", (void*) Java_com_brunjoy_jni_JNINet_setPort }, {
 				"doGet", "(Ljava/lang/String;)Ljava/lang/String;",
-				(void*) Java_com_brunjoy_jni_JNINet_doGet }, { "doPost",
+				(void*) doGet }, { "doPost",
 				"(Ljava/lang/String;)Ljava/lang/String;",
 				(void*) Java_com_brunjoy_jni_JNINet_doPost }, };
 ;
